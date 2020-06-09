@@ -21,7 +21,7 @@ const OCRFile = (fileName) => new Promise((resolve, reject) => {
 
     tesseract.recognize(fileName, config)
         .then(text => {
-            resolve({ text: text});
+            resolve({ text: text.replace('\n\f','')});
         })
         .catch(error => {
             reject(error);
