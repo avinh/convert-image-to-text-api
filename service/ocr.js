@@ -19,7 +19,7 @@ const OCRFile = (fileName) => new Promise((resolve, reject) => {
         psm: 3,
     }
 
-    tesseract.recognize("/home/avinh/Desktop/ocr/image.png", config)
+    tesseract.recognize(fileName, config)
         .then(text => {
             resolve({ text: text});
         })
